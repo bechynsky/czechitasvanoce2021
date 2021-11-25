@@ -1,1 +1,1 @@
-# czechitasvanoce2021
+# HACKATHON: PROGRAMOVÁNÍ
