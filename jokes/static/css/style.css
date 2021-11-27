@@ -1,0 +1,167 @@
+html { box-sizing: border-box; }
+*, ::before, ::after { box-sizing: inherit; }
+
+/*Použité styly:
+font:'Montserrat', sans-serif
+barva pozadí:#07425a
+barva písma:...
+barva pozadí patičky:...
+barva písma patičky:#07425a*/
+
+/*Styly pro body platí pro všechny verze*/
+
+body {
+  background-size: 100%;
+  background-image: url(images/pozadi-mobil2.png);
+  background-repeat: no-repeat;
+  margin: 20px;
+  color: aliceblue;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/*Styly pro mobilní verzi*/
+.obsah {
+  border: 4px dotted aliceblue;
+}
+
+.radio {
+  display: none;
+  justify-content: end;
+  margin-top: 20px;
+  
+}
+
+h1 {
+  font-size: 50px;
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+@keyframes posun {
+  0% {transform: translateY(0);}
+  50% {transform: translateY(-15px);}
+  100% {transform: translateY(0);}
+}
+
+.snehulak {
+  animation: 1.5s posun infinite both ease;
+  width: 200px;
+  margin-top: 80px;
+  margin-left: calc(100% / 3);
+  margin-right: calc(100% / 3);
+}
+
+.snehulak:hover {
+  animation: 0s posun infinite both ease;
+}
+
+#joke {
+  text-align: center;
+  padding: 30px;
+  padding-top: 0;
+  color: #207088;
+  font-weight: bold;
+}
+
+footer {
+  border: 4px dotted aliceblue;
+  margin-top: 10px;
+  background-color: #349fbf;
+  color: aliceblue;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/*Styly pro viewport 640px a více*/
+@media screen and (min-width:640px) {
+
+  body {
+    background-image: url(images/pozadi-tablet3.png);
+  }
+
+  .radio {
+    display: flex;
+  }
+
+  h1 {
+    font-size: 70px;
+    margin-bottom: 30px;
+  }
+
+  h2 {
+    display: none;
+  }
+  
+  .flexbox-pro-joke {
+    display: flex;
+    /*width: 100vh;*/
+    /*max-width: 800px;*/
+   /* margin-left: calc(100% / 5);
+    margin-right: calc(100% / 5);*/
+    justify-content: center;
+    margin-bottom: 60px;
+    /*flex: 0 0 calc(100% / 2);*/
+  }
+
+  .snehulak {
+    margin-left: 0;
+    margin-right: 0;
+    width: 250px;
+  }
+
+  #joke {
+    width: 100%;
+    max-width: 400px;
+    padding: 60px 0 0 0;
+    font-size: 20px;
+    text-align: center;
+    flex: 0 0 calc((100% - 20px) / 2);
+  }
+} 
+
+@media screen and (min-width:1000px) {
+  body {
+    background-image: url(images/pozadi-desktop2.png);
+  }
+
+  h1 {
+    font-size: 80px;
+    margin-top: 40px;
+  }
+
+  .snehulak {
+    width: 300px;
+  }
+
+  @keyframes rust {
+    from {transform: scale(1);}
+    to {transform: scale(1.3);}
+  }
+
+  .snehulak:hover {
+    /*width: 230px;*/
+    animation: rust 3s ease;
+  }
+
+  /*#joke {
+    background-color: aliceblue;
+    border: 2px solid #207088;
+    
+
+
+  }*/
+  
+  footer {
+    font-size: 20px;
+  
+  }
+
+  
+}
