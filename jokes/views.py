@@ -11,5 +11,4 @@ def index(request):
     # náhodný výběr id ze seznamu
     joke_id = choice(all_jokes_id)
     joke = Joke.objects.get(id=joke_id)
-    # return render(request, "jokes/jokes.html", {"joke": joke})
-    return HttpResponse(joke.content)
+    return render(request, "jokes/index.html", {"click_joke": joke.content})
